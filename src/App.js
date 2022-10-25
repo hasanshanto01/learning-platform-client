@@ -1,14 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import Button from 'react-bootstrap/Button';
+import { RouterProvider } from 'react-router-dom';
+import { routes } from './Routes/Routes';
 
 
 
 function App() {
   return (
-    <div className="App">
-      <Button variant="primary">Primary</Button>
-
+    <div className="">
+      <RouterProvider
+        router={routes}
+      ></RouterProvider>
     </div>
   );
 }
