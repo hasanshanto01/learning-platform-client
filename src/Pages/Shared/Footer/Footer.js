@@ -3,7 +3,7 @@ import { FaCopyright, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'rea
 
 const Footer = () => {
     return (
-        <div className='bg-primary text-center p-3 fixed-bottom'>
+        <div className='bg-primary text-center p-3'>
             <p className='fs-5 fw-bold mb-0'>Contact us</p>
             <div className='fs-3'>
                 <a href='https://www.facebook.com/' target='_blank'>
