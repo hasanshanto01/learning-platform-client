@@ -9,9 +9,9 @@ const CourseContainer = () => {
     // console.log(coursesData);
 
     return (
-        <div className='border border-danger'>
+        <div className=''>
             <div className="row">
-                <div className="col-3 border border-warning p-3">
+                <div className="col-3 border border-start-0 border-top-0 border-bottom-0 border-warning p-3">
                     <h2 className='text-warning text-center mb-3'>List of Courses</h2>
                     {
                         coursesData.map(courseData => <CourseRightSideNav

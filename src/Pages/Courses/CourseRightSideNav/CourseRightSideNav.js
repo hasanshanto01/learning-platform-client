@@ -7,13 +7,11 @@ const CourseRightSideNav = ({ courseData }) => {
     // console.log(title);
 
     return (
-        <div>
-            <ul>
-                <li>
-                    <Link to='/coures/id' className='text-decoration-none ms-2'>{title}</Link>
-                </li>
-            </ul>
-        </div>
+        <ul>
+            <li>
+                <Link to='/course/id' className='text-decoration-none ms-2'>{title}</Link>
+            </li>
+        </ul>
     );
 };
 
