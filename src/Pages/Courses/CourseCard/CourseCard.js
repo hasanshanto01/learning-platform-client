@@ -7,7 +7,7 @@ import { FaStar } from "react-icons/fa";
 
 const CourseCard = ({ courseData }) => {
 
-    const { title, img_url, details, rating, fee } = courseData;
+    const { id, title, img_url, details, rating, fee } = courseData;
     const { description } = details;
     console.log(courseData);
 
@@ -21,7 +21,7 @@ const CourseCard = ({ courseData }) => {
                 </Card.Text>
                 <div className='d-flex justify-content-between'>
                     <Button variant="warning">
-                        <Link to='/course/id' className='text-white fw-semibold text-decoration-none'>View Details</Link>
+                        <Link to={`/courses/${id}`} className='text-white fw-semibold text-decoration-none'>View Details</Link>
                     </Button>
                     <div className='fw-semibold'>
                         <p className='mb-0'>

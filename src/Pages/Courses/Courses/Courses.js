@@ -9,7 +9,7 @@ const Courses = () => {
 
     return (
         <div className='m-3'>
-            <h2 className='text-center text-warning mb-3'>Available Courses</h2>
+            <h3 className='text-center text-warning mb-3'>Available Courses</h3>
             <div className="container">
                 <div className="row">
                     {
