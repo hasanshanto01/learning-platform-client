@@ -1,4 +1,5 @@
 import React from 'react';
+import './Header.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -22,7 +23,7 @@ const Header = () => {
 
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+        <Navbar collapseOnSelect expand="lg" className='bg-custom' variant="dark">
             <Container className='text-danger'>
                 <Navbar.Brand href="/" className='fs-3 fw-bold'>
                     <img

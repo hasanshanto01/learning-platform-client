@@ -3,8 +3,8 @@ import { FaCopyright, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'rea
 
 const Footer = () => {
     return (
-        <div className='bg-primary text-center p-3'>
-            <p className='fs-5 fw-bold mb-0'>Contact us</p>
+        <div className='bg-custom text-center p-3 text-white'>
+            <p className='fs-5 fw-bold mb-0 text-warning'>Contact us</p>
             <div className='fs-3'>
                 <a href='https://www.facebook.com/' target='_blank'>
                     <FaFacebook className='text-white' />
@@ -19,7 +19,7 @@ const Footer = () => {
                     <FaLinkedin className='ms-3 text-white' />
                 </a>
             </div>
-            <p className='fs-5 mt-3'>All <FaCopyright className='text-white fs-6' />copyrights reserved to <span className='text-warning'>Skill</span> Hub</p>
+            <p className='fs-5 mt-3'>All <FaCopyright className='fs-6' />copyrights reserved to <span className='text-warning'>Skill</span> Hub</p>
         </div>
     );
 };

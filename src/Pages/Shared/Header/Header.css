@@ -1,0 +1,5 @@
+/* custom background color */
+.bg-custom {
+    /* background-color: #7B68EE; */
+    background: linear-gradient(55deg, blue, purple);
+}

@@ -4,6 +4,7 @@ import Main from '../layouts/Main';
 import Blog from "../Pages/Blog/Blog";
 import CourseDetails from "../Pages/Courses/CourseDetails/CourseDetails";
 import Courses from "../Pages/Courses/Courses/Courses";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
 
 export const routes = createBrowserRouter([
@@ -34,5 +35,9 @@ export const routes = createBrowserRouter([
                 element: <Blog></Blog>
             }
         ]
+    },
+    {
+        path: '/*',
+        element: <ErrorPage></ErrorPage>
     }
 ])
