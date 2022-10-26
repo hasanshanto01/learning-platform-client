@@ -48,12 +48,20 @@ const Header = () => {
                             Home
                         </NavLink>
                         <NavLink
-                            to="courses"
+                            to="/courses"
                             style={({ isActive }) =>
                                 isActive ? activeStyle : inactiveStyle
                             }
                         >
                             Courses
+                        </NavLink>
+                        <NavLink
+                            to="/faq"
+                            style={({ isActive }) =>
+                                isActive ? activeStyle : inactiveStyle
+                            }
+                        >
+                            FAQ
                         </NavLink>
                         <NavLink
                             to="/blog"

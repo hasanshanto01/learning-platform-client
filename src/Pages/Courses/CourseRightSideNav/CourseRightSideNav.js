@@ -7,9 +7,9 @@ const CourseRightSideNav = ({ courseData }) => {
     // console.log(title);
 
     return (
-        <ul>
-            <li>
-                <Link to={`/courses/${id}`} className='text-decoration-none ms-2'>{title}</Link>
+        <ul className='list-group'>
+            <li className='list-group-item border-warning bg-custom'>
+                <Link to={`/courses/${id}`} className='text-white text-decoration-none ms-2'>{title}</Link>
             </li>
         </ul>
     );
