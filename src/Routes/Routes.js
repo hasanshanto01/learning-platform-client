@@ -22,21 +22,21 @@ export const routes = createBrowserRouter([
             {
                 path: '/courses',
                 loader: () => {
-                    return fetch('http://localhost:5000/courses');
+                    return fetch('https://learning-platform-server-side-delta.vercel.app/courses');
                 },
                 element: <CourseContainer></CourseContainer>,
                 children: [
                     {
                         path: '/courses',
                         loader: () => {
-                            return fetch('http://localhost:5000/courses');
+                            return fetch('https://learning-platform-server-side-delta.vercel.app/courses');
                         },
                         element: <Courses></Courses>
                     },
                     {
                         path: '/courses/:id',
                         loader: ({ params }) => {
-                            return fetch(`http://localhost:5000/courses/${params.id}`)
+                            return fetch(`https://learning-platform-server-side-delta.vercel.app/courses/${params.id}`)
                         },
                         element: <CourseDetails></CourseDetails>
                     }
