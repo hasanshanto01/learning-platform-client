@@ -1,9 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const CourseRightSideNav = () => {
+const CourseRightSideNav = ({ courseData }) => {
+
+    const { id, title } = courseData;
+    // console.log(title);
+
     return (
         <div>
-            <h2>CourseRightSideNav</h2>
+            <ul>
+                <li>
+                    <Link to='/coures/id' className='text-decoration-none ms-2'>{title}</Link>
+                </li>
+            </ul>
         </div>
     );
 };

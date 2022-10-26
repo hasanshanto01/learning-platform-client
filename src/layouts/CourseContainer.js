@@ -1,13 +1,24 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { useState } from 'react';
+import { Outlet, useLoaderData } from 'react-router-dom';
 import CourseRightSideNav from '../Pages/Courses/CourseRightSideNav/CourseRightSideNav';
 
 const CourseContainer = () => {
+
+    const coursesData = useLoaderData();
+    // console.log(coursesData);
+
     return (
-        <div className='container'>
+        <div className='border border-danger'>
             <div className="row">
-                <div className="col-3">
-                    <CourseRightSideNav></CourseRightSideNav>
+                <div className="col-3 border border-warning p-3">
+                    <h2 className='text-warning text-center mb-3'>List of Courses</h2>
+                    {
+                        coursesData.map(courseData => <CourseRightSideNav
+                            key={courseData.id}
+                            courseData={courseData}
+                        ></CourseRightSideNav>
+                        )}
                 </div>
                 <div className="col-9">
                     <Outlet></Outlet>
