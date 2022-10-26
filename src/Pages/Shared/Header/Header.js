@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link, NavLink } from 'react-router-dom';
-import img from '../../../image/logo.png';
+import logoImg from '../../../image/logo.png';
 
 const Header = () => {
 
@@ -27,7 +27,7 @@ const Header = () => {
             <Container className='text-danger'>
                 <Navbar.Brand href="/" className='fs-3 fw-bold'>
                     <img
-                        src={img}
+                        src={logoImg}
                         alt=""
                         width="40"
                         height="40"
