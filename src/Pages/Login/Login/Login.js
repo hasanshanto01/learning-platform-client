@@ -12,7 +12,7 @@ const Login = () => {
 
     const [error, setError] = useState('');
 
-    const { signIn, setUser } = useContext(AuthContext);
+    const { signIn, setUser, googleSignIn, githubSignIn } = useContext(AuthContext);
     // console.log(signIn);
     const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
                 setUser(user);
 
                 form.reset();
@@ -39,12 +39,36 @@ const Login = () => {
                 // console.error(error);
                 setError(error.message);
             })
-    }
+    };
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setUser(user);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    };
+
+    const handleGithubSignIn = () => {
+        githubSignIn()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setUser(user);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    };
 
     return (
         <div className='d-flex'>
             <div className='w-50'>
-                <img src={login} alt="" />
+                <img src={login} alt="" className='mt-5 ms-5' />
             </div>
             <div className='w-50'>
                 <h3 className='mt-3 text-warning text-center'>Login</h3>
@@ -80,11 +104,11 @@ const Login = () => {
                 <hr className='mx-4 text-primary' />
                 <div className='w-75 px-3 mb-3 mx-auto text-center'>
                     <p className='fs-5 text-warning'>Or connect with</p>
-                    <Button variant="outline-primary" className='w-100 mb-3'>
+                    <Button onClick={handleGoogleSignIn} variant="outline-primary" className='w-100 mb-3'>
                         <FaGoogle className='me-2' />
                         Login with google
                     </Button>
-                    <Button variant="outline-dark" className='w-100 mb-3'>
+                    <Button onClick={handleGithubSignIn} variant="outline-dark" className='w-100 mb-3'>
                         <FaGithub className='me-2' />
                         Login in with github
                     </Button>

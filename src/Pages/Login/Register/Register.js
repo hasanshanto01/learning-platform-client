@@ -49,7 +49,7 @@ const Register = () => {
     return (
         <div className='d-flex'>
             <div className='w-50'>
-                <img src={login} alt="" />
+                <img src={login} alt="" className='mt-5 ms-5' />
             </div>
             <div className='w-50'>
                 <h3 className='mt-3 text-warning text-center'>Register</h3>

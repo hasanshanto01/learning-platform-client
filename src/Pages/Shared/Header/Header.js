@@ -94,14 +94,14 @@ const Header = () => {
                                         onClick={handleLogOut}
                                         variant="outline-warning"
                                         size="sm"
-                                        className='mx-4 text-white fs-5 py-0'
+                                        className='mx-3 text-white fs-5 py-0'
                                     >
                                         Log Out
                                     </Button>
-                                    <div className='border border-success'>
+                                    <div>
                                         {
                                             user?.photoURL ?
-                                                <img src={user?.photoURL} alt="" />
+                                                <img src={user?.photoURL} alt="" style={{ width: '50px', height: '50px' }} className='rounded-circle' />
                                                 :
                                                 <FaUserCircle className='text-warning display-5'
                                                 />
