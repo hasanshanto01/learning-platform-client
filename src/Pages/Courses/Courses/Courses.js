@@ -11,7 +11,7 @@ const Courses = () => {
         <div className='m-3'>
             <h3 className='text-center text-warning mb-3'>Available Courses</h3>
             <div className="container">
-                <div className="row">
+                <div className="row justify-content-around">
                     {
                         coursesData.map(courseData => <CourseCard
                             key={courseData.id}

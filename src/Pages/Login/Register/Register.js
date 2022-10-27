@@ -53,9 +53,9 @@ const Register = () => {
     }
 
     return (
-        <div className='d-flex'>
+        <div className='d-flex flex-column flex-md-row align-items-center'>
             <div className='w-50'>
-                <img src={login} alt="" className='mt-5 ms-5' />
+                <img src={login} alt="" className='w-100 my-3 mx-md-3' />
             </div>
             <div className='w-50'>
                 <h3 className='mt-3 text-warning text-center'>Register</h3>

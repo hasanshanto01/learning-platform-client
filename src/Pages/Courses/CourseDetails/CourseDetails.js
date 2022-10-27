@@ -28,7 +28,7 @@ const CourseDetails = () => {
 
 
     return (
-        <div className='p-3 border border-danger' ref={ref}>
+        <div className='p-3' ref={ref}>
 
             {/* title  */}
             <div className='d-flex align-items-center justify-content-between mb-3'>

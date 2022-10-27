@@ -12,7 +12,7 @@ const CourseCard = ({ courseData }) => {
     console.log(courseData);
 
     return (
-        <Card className='col-5 p-0 ms-5 my-4 shadow'>
+        <Card className='col-10 col-md-5 p-0 my-4 shadow'>
             <Card.Img variant="top" src={img_url} className='h-50 rounded' />
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
@@ -33,9 +33,9 @@ const CourseCard = ({ courseData }) => {
                             <FaStar className='text-warning' />
                         </p>
                     </div>
-                </div>
-            </Card.Body>
-        </Card>
+                </div >
+            </Card.Body >
+        </Card >
     );
 };
 

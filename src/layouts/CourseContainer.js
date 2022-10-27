@@ -11,7 +11,7 @@ const CourseContainer = () => {
     return (
         <div className=''>
             <div className="row">
-                <div className="col-3 border border-start-0 border-top-0 border-bottom-0 border-warning p-3 bg-custom">
+                <div className="col-5 col-md-4 border border-start-0 border-top-0 border-bottom-0 border-warning p-3 bg-custom">
                     <h3 className='text-warning text-center mb-3'>List of Courses</h3>
                     {
                         coursesData.map(courseData => <CourseRightSideNav
@@ -20,7 +20,7 @@ const CourseContainer = () => {
                         ></CourseRightSideNav>
                         )}
                 </div>
-                <div className="col-9">
+                <div className="col-7 col-md-8">
                     <Outlet></Outlet>
                 </div>
             </div>
