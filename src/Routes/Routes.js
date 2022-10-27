@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import CourseContainer from "../layouts/CourseContainer";
 import Main from '../layouts/Main';
 import Blog from "../Pages/Blog/Blog";
+import Checkout from "../Pages/Checkout/Checkout";
 import CourseDetails from "../Pages/Courses/CourseDetails/CourseDetails";
 import Courses from "../Pages/Courses/Courses/Courses";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
@@ -9,6 +10,7 @@ import FAQ from "../Pages/FAQ/FAQ";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login/Login";
 import Register from "../Pages/Login/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -57,6 +59,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/checkout',
+                element: <PrivateRoute>
+                    <Checkout></Checkout>
+                </PrivateRoute>
             }
         ]
     },

@@ -9,6 +9,7 @@ import logoImg from '../../../image/logo.png';
 import { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvide/AuthProvider';
 import { FaBeer, FaUserCircle } from 'react-icons/fa';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Header = () => {
 
@@ -24,15 +25,16 @@ const Header = () => {
         marginLeft: "20px"
     };
 
-    const { user, setUser, logOut } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     console.log(user);
 
     const handleLogOut = () => {
         logOut()
-            .then(() => {
-                setUser(null);
+            .then(() => { })
+            .catch(error => {
+                console.error(error);
+                toast.error(error.message);
             })
-            .catch(error => console.error(error));
     }
 
 
@@ -97,6 +99,7 @@ const Header = () => {
                                         className='mx-3 text-white fs-5 py-0'
                                     >
                                         Log Out
+                                        <Toaster />
                                     </Button>
                                     <div>
                                         {

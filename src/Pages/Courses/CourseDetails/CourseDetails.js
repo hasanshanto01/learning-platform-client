@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import { FaDownload, FaStar } from "react-icons/fa";
 
@@ -10,6 +10,12 @@ const CourseDetails = () => {
     const { name, image } = instructor;
     const { description, course_for } = details;
     // console.log(instructor);
+
+    const navigate = useNavigate();
+
+    const handlePremium = () => {
+        navigate('/checkout');
+    }
 
     return (
         <div className='p-3'>
@@ -55,8 +61,11 @@ const CourseDetails = () => {
 
                     {/* premium btn  */}
                     <div className='text-center mt-5'>
-                        <Button variant="warning">
-                            <Link to='' className='text-white fw-semibold text-decoration-none'>Get Premium Access</Link>
+                        <Button
+                            onClick={handlePremium}
+                            variant="warning"
+                            className='text-white fw-semibold text-decoration-none'>
+                            Get Premium Access
                         </Button>
                     </div>
 

@@ -2,19 +2,22 @@ import React, { useState } from 'react';
 import login from '../../../image/login.gif';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvide/AuthProvider';
 import { FormGroup } from 'react-bootstrap';
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
 
     const [error, setError] = useState('');
 
-    const { signIn, setUser, googleSignIn, githubSignIn } = useContext(AuthContext);
+    const { setUser, signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
     // console.log(signIn);
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -27,12 +30,12 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
-                // console.log(user);
-                setUser(user);
+                console.log(user);
+                // setUser(user);
 
                 form.reset();
                 setError('');
-                navigate('/');
+                navigate(from, { replace: true });
 
             })
             .catch(error => {
@@ -46,10 +49,13 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                setUser(user);
+                // setUser(user);
+                navigate(from, { replace: true });
+
             })
             .catch(error => {
-                console.error(error);
+                // console.error(error);
+                toast.error(error.message);
             })
     };
 
@@ -58,10 +64,13 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                setUser(user);
+                // setUser(user);
+                navigate(from, { replace: true });
+
             })
             .catch(error => {
-                console.error(error);
+                // console.error(error);
+                toast.error(error.message);
             })
     };
 
@@ -114,6 +123,7 @@ const Login = () => {
                     </Button>
                 </div>
             </div>
+            <Toaster />
         </div>
     );
 };

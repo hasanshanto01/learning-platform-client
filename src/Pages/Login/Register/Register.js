@@ -2,7 +2,7 @@ import React from 'react';
 import login from '../../../image/login.gif';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvide/AuthProvider';
 import { useState } from 'react';
@@ -54,21 +54,21 @@ const Register = () => {
             <div className='w-50'>
                 <h3 className='mt-3 text-warning text-center'>Register</h3>
                 <Form onSubmit={handleSubmit} className='w-75 mx-auto mb-4 p-3 fs-5 rounded bg-custom text-white'>
-                    <Form.Group controlId="formBasicEmail">
+                    <Form.Group>
                         <Form.Label>Your Name</Form.Label>
                         <Form.Control
                             name='name'
                             type="text"
                             placeholder="Enter name" className='border-warning' />
                     </Form.Group>
-                    <Form.Group controlId="formBasicEmail">
+                    <Form.Group>
                         <Form.Label>PhotoURL</Form.Label>
                         <Form.Control
                             name='photoURL'
                             type="text"
                             placeholder="PhotoURL" className='border-warning' />
                     </Form.Group>
-                    <Form.Group controlId="formBasicEmail">
+                    <Form.Group>
                         <Form.Label>Email address</Form.Label>
                         <Form.Control
                             name='email'
@@ -76,14 +76,14 @@ const Register = () => {
                             placeholder="Enter email" className='border-warning' required />
                     </Form.Group>
 
-                    <Form.Group controlId="formBasicPassword">
+                    <Form.Group>
                         <Form.Label>Password</Form.Label>
                         <Form.Control
                             name='password'
                             type="password"
                             placeholder="Password" className='border-warning' required />
                     </Form.Group>
-                    <Form.Group controlId="formBasicPassword">
+                    <Form.Group>
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control
                             name='confirm'
