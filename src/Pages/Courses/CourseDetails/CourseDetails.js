@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import { FaDownload, FaStar } from "react-icons/fa";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 const CourseDetails = () => {
 
@@ -15,7 +17,12 @@ const CourseDetails = () => {
 
     const handlePremium = () => {
         navigate('/checkout');
-    }
+    };
+
+    const renderTooltip = props => (
+        <Tooltip {...props}>Download</Tooltip>
+    );
+
 
     return (
         <div className='p-3'>
@@ -23,7 +30,11 @@ const CourseDetails = () => {
             {/* title  */}
             <div className='d-flex align-items-center justify-content-between mb-3'>
                 <h3 className='text-warning'>{title}</h3>
-                <FaDownload className='fs-4 text-primary' />
+                <OverlayTrigger placement="left" overlay={renderTooltip}>
+                    <Button>
+                        <FaDownload />
+                    </Button>
+                </OverlayTrigger>
             </div>
             <hr className='text-primary' />
 

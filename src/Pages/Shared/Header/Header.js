@@ -10,6 +10,8 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvide/AuthProvider';
 import { FaBeer, FaUserCircle } from 'react-icons/fa';
 import toast, { Toaster } from 'react-hot-toast';
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 const Header = () => {
 
@@ -35,7 +37,11 @@ const Header = () => {
                 console.error(error);
                 toast.error(error.message);
             })
-    }
+    };
+
+    const renderTooltip = props => (
+        <Tooltip {...props}>{user?.displayName}</Tooltip>
+    );
 
 
     return (
@@ -101,7 +107,7 @@ const Header = () => {
                                         Log Out
                                         <Toaster />
                                     </Button>
-                                    <div>
+                                    <OverlayTrigger placement="bottom" overlay={renderTooltip}>
                                         {
                                             user?.photoURL ?
                                                 <img src={user?.photoURL} alt="" style={{ width: '50px', height: '50px' }} className='rounded-circle' />
@@ -109,7 +115,8 @@ const Header = () => {
                                                 <FaUserCircle className='text-warning display-5'
                                                 />
                                         }
-                                    </div>
+                                    </OverlayTrigger>
+
                                 </>
                                 :
                                 <>

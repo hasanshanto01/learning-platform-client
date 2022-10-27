@@ -11,6 +11,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const Register = () => {
 
     const [error, setError] = useState('')
+    const [accepted, setAccepted] = useState(false);
 
     const { createUser } = useContext(AuthContext);
 
@@ -44,6 +45,11 @@ const Register = () => {
             setError('Error: Password did not match!');
         }
 
+    };
+
+    const handleAccepted = event => {
+        // console.log(event.target.checked);
+        setAccepted(event.target.checked);
     }
 
     return (
@@ -95,7 +101,11 @@ const Register = () => {
                         {error}
                     </Form.Text>
 
-                    <Button variant="warning" type="submit" className='w-100 mt-3 text-white fs-5 fw-semibold'>
+                    <Form.Group className="mt-3">
+                        <Form.Check onClick={handleAccepted} type="checkbox" label={<small>Accept Terms and  conditions</small>} />
+                    </Form.Group>
+
+                    <Button variant="warning" type="submit" className='w-100 mt-1 text-white fs-5 fw-semibold' disabled={!accepted}>
                         Register
                     </Button>
                     <p className='my-2 text-center'>
@@ -105,7 +115,7 @@ const Register = () => {
                     <Toaster />
                 </Form>
             </div>
-        </div>
+        </div >
     );
 };
 
