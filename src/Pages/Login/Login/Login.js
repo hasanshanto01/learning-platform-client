@@ -12,7 +12,7 @@ const Login = () => {
 
     const [error, setError] = useState('');
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn, setUser } = useContext(AuthContext);
     // console.log(signIn);
     const navigate = useNavigate();
 
@@ -28,8 +28,10 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setUser(user);
 
                 form.reset();
+                setError('');
                 navigate('/');
 
             })
