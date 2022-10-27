@@ -61,7 +61,10 @@ export const routes = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '/checkout',
+                path: '/checkout/course/:id',
+                loader: ({ params }) => {
+                    return fetch(`https://learning-platform-server-side-delta.vercel.app/courses/${params.id}`)
+                },
                 element: <PrivateRoute>
                     <Checkout></Checkout>
                 </PrivateRoute>

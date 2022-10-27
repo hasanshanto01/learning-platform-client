@@ -1,23 +1,26 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import { FaDownload, FaStar } from "react-icons/fa";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import Pdf from "react-to-pdf";
+
+const ref = createRef();
 
 const CourseDetails = () => {
 
     const courseData = useLoaderData();
-    const { title, img_url, instructor, rating, details } = courseData;
+    const { id, title, img_url, instructor, rating, details } = courseData;
     const { name, image } = instructor;
     const { description, course_for } = details;
     // console.log(instructor);
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const handlePremium = () => {
-        navigate('/checkout');
-    };
+    // const handlePremium = () => {
+    //     navigate('/checkout');
+    // };
 
     const renderTooltip = props => (
         <Tooltip {...props}>Download</Tooltip>
@@ -25,16 +28,23 @@ const CourseDetails = () => {
 
 
     return (
-        <div className='p-3'>
+        <div className='p-3 border border-danger' ref={ref}>
 
             {/* title  */}
             <div className='d-flex align-items-center justify-content-between mb-3'>
                 <h3 className='text-warning'>{title}</h3>
-                <OverlayTrigger placement="left" overlay={renderTooltip}>
+                {/* <OverlayTrigger placement="left" overlay={renderTooltip}>
                     <Button>
                         <FaDownload />
                     </Button>
-                </OverlayTrigger>
+                </OverlayTrigger> */}
+                <Pdf targetRef={ref} filename={title}>
+                    {({ toPdf }) => <OverlayTrigger placement="left" overlay={renderTooltip}>
+                        <Button onClick={toPdf}>
+                            <FaDownload />
+                        </Button>
+                    </OverlayTrigger>}
+                </Pdf>
             </div>
             <hr className='text-primary' />
 
@@ -72,13 +82,11 @@ const CourseDetails = () => {
 
                     {/* premium btn  */}
                     <div className='text-center mt-5'>
-                        <Button
-                            onClick={handlePremium}
-                            variant="warning"
-                            className='text-white fw-semibold text-decoration-none'>
-                            Get Premium Access
+                        <Button variant="warning">
+                            <Link to={`/checkout/course/${id}`} className='text-white fw-semibold text-decoration-none'>Get Premium Access</Link>
                         </Button>
                     </div>
+
 
                 </div>
 
