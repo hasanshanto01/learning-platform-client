@@ -1,3 +1,15 @@
+# Project Name: Skil Hub ( An Learning Platform )
+
+### Live-site: (https://learning-platform-client-227d8.web.app/)
+
+## Features:
+* Contain technical courses
+* In courses page there are availabe course which can be viewd in detail
+* For premium access user need to login or already logged in
+* Have authentication system
+* Conatin FQA & Blog pages
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
